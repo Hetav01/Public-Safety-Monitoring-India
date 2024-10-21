@@ -30,7 +30,7 @@ def file_to_vid_list(metadata_file, file_type):
     video_list = []
     
     if file_type == 'b' :
-        with open(metadata_file) as f:
+        with open(metadata_file, encoding= "utf-16") as f:
             for line in f:
                 words = line.strip().split()
                 if words[0] == '[youtube]': 
@@ -43,7 +43,7 @@ def file_to_vid_list(metadata_file, file_type):
                 video_list.append(words[0])
 
     elif file_type == 'c' : 
-        with open(metadata_file) as f : 
+        with open(metadata_file, encoding= "utf-16") as f : 
             for line in f :
                 video_list.append(line.rstrip("\n"))
 
