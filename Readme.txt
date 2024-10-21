@@ -36,7 +36,6 @@ The pythom command to download video metadata will be
 
 python DownloadVideoMetadata.py c VideoIDs.txt DjokovicVideoMetadata Key.txt 
 
-
 To obtain the comments, first create a folder with name say, DjokovicComments 
 
 The python command to download comments will be 

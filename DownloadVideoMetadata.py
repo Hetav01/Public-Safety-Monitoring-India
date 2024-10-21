@@ -9,7 +9,17 @@ import datetime
 API_URL_ROOT =  "https://www.googleapis.com/youtube/v3/videos?part=snippet%2Cstatistics%2CcontentDetails&id="
 
 
+def get_api_key():
+    """
+    Retrieve the API key from an environment variable or a file.
+    """
+    api_key = os.getenv('YOUTUBE_API_KEY')
+    if not api_key:
+        with open('Key.txt') as f:
+            api_key = f.read().strip()
+    return api_key
 
+API_KEY = get_api_key()
 
 
 def file_to_vid_list(metadata_file, file_type):
@@ -27,10 +37,10 @@ def file_to_vid_list(metadata_file, file_type):
                     video_list.append(words[1][:-1])
 
     elif file_type == 'n' : 
-        with open(metadata_file) as f:
+        with open(metadata_file, encoding= "utf-16") as f:
             for line in f:
                 words = line.rstrip("\n").split(',')
-                video_list.append(words[1])
+                video_list.append(words[0])
 
     elif file_type == 'c' : 
         with open(metadata_file) as f : 
