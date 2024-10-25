@@ -26,7 +26,7 @@ def file_to_vid_list(metadata_file, file_type):
         with open(metadata_file, encoding= "utf-16") as f:
             for line in f:
                 words = line.rstrip("\n").split()
-                video_list.append(words[1])
+                video_list.append(words[0])
 
     elif file_type == 'c' : 
         with open(metadata_file, encoding= "utf-16") as f : 
