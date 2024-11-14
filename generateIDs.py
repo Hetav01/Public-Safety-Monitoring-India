@@ -5,7 +5,7 @@ outfile = '/Users/ajaykumarpatel/Desktop/Data Science/Grad DS Work/DSCI 601 Appl
 
 with open(infile, "r", newline= '', encoding='utf-16') as infile, open(outfile, "w", newline= '', encoding='utf-16') as outfile:
     reader = csv.reader(infile)
-    writer = csv.writer(outfile)
+    writer = csv.writer(outfile)  
     
     for row in reader:
         writer.writerow(''.join(row[1].split("=")[1]))
