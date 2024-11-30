@@ -63,7 +63,7 @@ def write_to_csv(driver):
     " return result; ")
     #print(out_dict)
     
-    with open('/Users/ajaykumarpatel/Desktop/Data Science/Grad DS Work/DSCI 601 Applied Data Science/old_repos/NLPPunePorsche/PunePorscheTitles.csv', 'w', newline='', encoding='utf-16', errors ='ignore') as csvfile: #change this line if you want to save the results in the different CSV.
+    with open('/Users/hetavpatel/Desktop/Data Science/Grad DS Work/DSCI 601 Applied Data Science/old_repos/NLPPunePorsche/PunePorscheTitles.csv', 'w', newline='', encoding='utf-16', errors ='ignore') as csvfile: #change this line if you want to save the results in the different CSV.
         csv_writer = writer(csvfile)
         csv_writer.writerows(out_dict)
     
@@ -72,17 +72,23 @@ def write_to_csv(driver):
     print("written in ", (time_end - time_start) / 60)
     
 def apply_date_filter(driver):
-    # Wait for the filters button to appear and click it
+    # Wait for the "filters" button to appear and click it
     filters_button = WebDriverWait(driver, 3).until(
         EC.element_to_be_clickable((By.XPATH, "/html/body/ytd-app/div[1]/ytd-page-manager/ytd-search/div[1]/div/ytd-search-header-renderer/div[3]/ytd-button-renderer/yt-button-shape/button/yt-touch-feedback-shape/div"))
     )
     filters_button.click()
 
-    # Wait for the Upload Date filter option and click it
+    # Wait for the "Upload Date" filter option and click it
     upload_date_filter = WebDriverWait(driver, 3).until(
         EC.element_to_be_clickable((By.XPATH, "/html/body/ytd-app/ytd-popup-container/tp-yt-paper-dialog/ytd-search-filter-options-dialog-renderer/div[2]/ytd-search-filter-group-renderer[1]/ytd-search-filter-renderer[5]/a/div"))
     )
     upload_date_filter.click()
+    
+    # Wait for the "Relevance" filter option and click it
+    # relevance_date_filter = WebDriverWait(driver, 7).until(
+    #     EC.element_to_be_clickable((By.XPATH, "/html/body/ytd-app/ytd-popup-container/tp-yt-paper-dialog/ytd-search-filter-options-dialog-renderer/div[2]/ytd-search-filter-group-renderer[5]/ytd-search-filter-renderer[1]/a/div"))
+    # )
+    # relevance_date_filter.click()
     
     # filters_button = WebDriverWait(driver, 2).until(
     #     EC.element_to_be_clickable((By.XPATH, "/html/body/ytd-app/div[1]/ytd-page-manager/ytd-search/div[1]/div/ytd-search-header-renderer/div[3]/ytd-button-renderer/yt-button-shape/button/yt-touch-feedback-shape/div"))
@@ -94,21 +100,26 @@ def apply_date_filter(driver):
     #     EC.element_to_be_clickable((By.XPATH, "/html/body/ytd-app/ytd-popup-container/tp-yt-paper-dialog[3]/ytd-search-filter-options-dialog-renderer/div[2]/ytd-search-filter-group-renderer[5]/ytd-search-filter-renderer[1]/a/div"))
     # )
     # sort_by_filter.click()
+ 
+
+    """
+        We're keeping the shorts in the dataset because they are relevant to the topic.
+    """
     
-def remove_shorts(fileInput, fileOutput):
+# def remove_shorts(fileInput, fileOutput):
     
-    with open(fileInput, "r", newline= '', encoding='utf-16') as infile, open(fileOutput, "w", newline= '', encoding='utf-16') as outfile:
-        reader = csv.reader(infile)
-        writer = csv.writer(outfile)
+#     with open(fileInput, "r", newline= '', encoding='utf-16') as infile, open(fileOutput, "w", newline= '', encoding='utf-16') as outfile:
+#         reader = csv.reader(infile)
+#         writer = csv.writer(outfile)
         
-        for row in reader:
-            if "/shorts" not in ','.join(row):
-                writer.writerow(row)
+#         for row in reader:
+#             if "/shorts" not in ','.join(row):
+#                 writer.writerow(row)
     
 if __name__ == "__main__": 
     
-    input_file = "/Users/ajaykumarpatel/Desktop/Data Science/Grad DS Work/DSCI 601 Applied Data Science/old_repos/NLPPunePorsche/PunePorscheTitles.csv"
-    output_file = "/Users/ajaykumarpatel/Desktop/Data Science/Grad DS Work/DSCI 601 Applied Data Science/old_repos/NLPPunePorsche/PunePorscheTitles_filtered.csv"
+    # input_file = "/Users/ajaykumarpatel/Desktop/Data Science/Grad DS Work/DSCI 601 Applied Data Science/old_repos/NLPPunePorsche/PunePorscheTitles.csv"
+    # output_file = "/Users/ajaykumarpatel/Desktop/Data Science/Grad DS Work/DSCI 601 Applied Data Science/old_repos/NLPPunePorsche/PunePorscheTitles_filtered.csv"
 
     chrome_options = Options()
     chrome_options.add_argument("--headless")  # Example option, add more if needed
@@ -123,6 +134,6 @@ if __name__ == "__main__":
     driver = scroll_to_end(driver)
     write_to_csv(driver)
     
-    remove_shorts(input_file, output_file)
+    # remove_shorts(input_file, output_file)
     
     
