@@ -95,13 +95,13 @@ def apply_date_filter(driver):
     # )
     # filters_button.click()
     
-    # # Wait for the Upload Date filter option and click it
+    # Wait for the Upload Date filter option and click it
     # sort_by_filter = WebDriverWait(driver, 2).until(
     #     EC.element_to_be_clickable((By.XPATH, "/html/body/ytd-app/ytd-popup-container/tp-yt-paper-dialog[3]/ytd-search-filter-options-dialog-renderer/div[2]/ytd-search-filter-group-renderer[5]/ytd-search-filter-renderer[1]/a/div"))
     # )
     # sort_by_filter.click()
  
-
+    
     """
         We're keeping the shorts in the dataset because they are relevant to the topic.
     """
