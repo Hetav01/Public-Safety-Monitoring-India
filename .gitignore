@@ -7,4 +7,7 @@ Key.txt
 
 #final csv
 eda/final_youtube_comments.csv
+consolidated_youtube_comments.csv
 
+#envirnment
+.venv/
