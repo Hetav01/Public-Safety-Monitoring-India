@@ -4,8 +4,11 @@ import matplotlib.pyplot as plt
 import emoji
 import langdetect
 # import google_trans_new
-from deep_translator import GoogleTranslator
+# from google_trans_new import google_translator
+# from deep_translator import GoogleTranslator
 from langdetect import detect
+from translate import Translator
+
 
 df = pd.read_csv('/Users/hetavpatel/Desktop/Data Science/Grad DS Work/DSCI 601 Applied Data Science/old_repos/NLPPunePorsche/eda/final_youtube_comments.csv')
 
@@ -26,11 +29,6 @@ def detect_lang(comment):
         return detect(comment)
     except:
         return 'unknown'
-
-#write a function to translate the comments to english
-def translate_to_english(comment):
-    translator = GoogleTranslator(source='auto', target='en').translate(text= comment)
-    return translator
 
 #first demojize the comments
 # apply the function to the dataframe
@@ -62,12 +60,46 @@ print(df.head())
 # print(df[df["etag"] == "63WlAiuKV0xuDtdhCcWrV1wwYzg"]["textOriginal"].head())
 # print(df["textOriginal"][84])
 
+#write a function to translate the comments to english
+def translate_to_english(comment):
+    # translator = GoogleTranslator(source='auto', target='en').translate(text= comment)
+    # return translator
+    
+    # use google_trans_new to translate the comments
+    # translator = google_translator()
+    # return translator.translate(comment, lang_tgt='en')
+    
+    #use translate API to translate the comments, but translate only the comments that are not in english keep the rest same.
+    if detect_lang(comment) != 'en':
+        translator = Translator(to_lang='en')
+        return translator.translate(comment)
+    return comment    
+
 #translate the comments to english
 df['textOriginalEnglish'] = df['textOriginal'].apply(translate_to_english)
 
-print(df['textOriginalEnglish'][84:105])
+# --- Commented out code below is for testing purposes ---
 
-#save the dataframe to csv
+# #translate the comments to english
+# df['textOriginalEnglish'] = df['textOriginal'].apply(translate_to_english)
+
+#translate only the comments that are not in english
+# print(GoogleTranslator().get_supported_languages(as_dict=True))
+
+#save the translated comments from textOriginalEnglish column in each line of a text file
+with open('translated_comments.txt', 'w') as f:
+    for comment in df['textOriginalEnglish']:
+        f.write(comment + '\n')
+        
+#update the language in a new column after detecting again
+df['langNew'] = df['textOriginalEnglish'].apply(detect_lang)
+
+# save the dataframe to csv
 df.to_csv('youtube_comments_english.csv')
 
+print(df.head())
+print(df.shape)
+print(df['textOriginalEnglish'][84:105])
+print(df.info())
+print(df['langNew'].value_counts())
 

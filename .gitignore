@@ -8,6 +8,8 @@ Key.txt
 #final csv
 eda/final_youtube_comments.csv
 consolidated_youtube_comments.csv
+preprocessing/translated_comments.txt
+preprocessing/youtube_comments_english.csv
 
 #envirnment
 .venv/
