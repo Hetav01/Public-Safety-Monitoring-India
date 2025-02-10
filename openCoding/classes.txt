@@ -1,0 +1,6 @@
+1 - Judicial Accountability and Policy Demands: Comments discussing the legal outcomes, privilege in the judiciary, or the actions of the court.
+2 - Public Safety: Concerns raised about road safety, reckless driving, or preventive measures.
+3 - Socioeconomic Privilege: Comments highlighting class dynamics, privilege, or inequality in legal consequences.
+4 - Victim Sympathy: Empathy expressed towards the victims and their families.
+5 - Anger or Outrage: Expressions of frustration, dissatisfaction, or anger about the incident or its handling.
+6 - Irrelevant/General Comments: Off-topic remarks, emojis, or comments with little context.
