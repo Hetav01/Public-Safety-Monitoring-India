@@ -6,8 +6,6 @@ import re
 #set the root directory to the current working directory
 root_dir = os.getcwd()
 
-
-
 def extract_comments_to_excel(file_path):
     #read the csv file
     df = pd.read_csv(file_path)

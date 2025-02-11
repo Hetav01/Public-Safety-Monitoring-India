@@ -30,3 +30,6 @@ df_main = df_main[~df_main["etag"].isin(df_removed["etag"])]
 #count the number of comments in the main csv file.
 print(f"Final number of comments: {df_main.shape[0]}")
 print(df_main.info())
+
+#save the main csv file to a new csv file.
+df_main.to_csv("/Users/hetavpatel/Desktop/Data Science/Grad DS Work/DSCI 601 Applied Data Science/old_repos/NLPPunePorsche/openCoding/cleaned_youtube_comments_removed.csv", index=False)

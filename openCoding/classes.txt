@@ -4,3 +4,4 @@
 4 - Victim Sympathy: Empathy expressed towards the victims and their families.
 5 - Anger or Outrage: Expressions of frustration, dissatisfaction, or anger about the incident or its handling.
 6 - Irrelevant/General Comments: Off-topic remarks, emojis, or comments with little context.
+7 - Views on Similar Cases in the Past: Talks about another case in the past.
