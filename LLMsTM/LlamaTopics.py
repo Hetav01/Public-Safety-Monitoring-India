@@ -26,7 +26,7 @@ df = pd.read_csv("/Users/hetavpatel/Desktop/Data Science/Grad DS Work/DSCI 601 A
 
 df["label"] = ""
 
-for i in range(100):    # set the loop for only first 500 comments.
+for i in range(150):    # set the loop for only first 500 comments.
     text = df["textCleaned"][i]
     
     messages = [ 
@@ -47,21 +47,15 @@ for i in range(100):    # set the loop for only first 500 comments.
             
             The reason behind this is that the comment is about the court's decision and the need for capital punishment, which falls under Judicial Accountability and Policy Demands.
             If the Input: ":fire::victory_hand::OK_hand::hundred_points::crossed_fingers::thumbs_up:", the Output: 6. 
-            
-            The reason behind this is that the comment is just emojis, which falls under Irrelevant/General Comments.
-            
+            If the Input: ":red_heart::smiling_face:", the Output: 6.
+            The reason behind this is that the comment is just emojis, which falls under Irrelevant/General Comments.            
             If the Input: "Does anyone know ""Cameron Herrin"" case ?????", the Output: 7.
-            
             If the Input: "Money can buy law and everything", the Output: 3.
-            
             If the Input: "Ye to choti accident thi sukar hai bike mai silence nahi laga tha varna jail ho jati", the Output: 2.
-            
             If the Input: "Justice for Ashwini and Aneesh", the Output: 4.
-            
             If the Input: "Judiciary,,,,,,moye moye ho gya", the Output: 5.
-            
             Based on this information, classify the comment into one of the 7 labels. 
-            
+            Note: There will be many irrelevant comments, so be sure and try to classify them into 6. Be strict about the irrelevant comments. If there's a small sign of irrelevance, classify it into 6.
             You only need to return the label number and nothing else.
          """}, 
     ] 

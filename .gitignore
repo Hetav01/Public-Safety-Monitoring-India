@@ -15,11 +15,11 @@ preprocessing/cleaned_youtube_comments.csv
 
 openCoding/openCodingComments.csv
 openCoding/openCodingComments.xlsx
-LLMsTM/openCodingCommentsLabeled.xlsx
-LLMsTM/openCodingCommentsLabeled.csv
+LLMsTM/AnishaopenCodingCommentsLabeled.xlsx
+LLMsTM/AnishaopenCodingCommentsLabeled.csv
 openCoding/youtube_comments_unlabeled.csv
 LLMsTM/unlabeled_sampled.csv
-LLMsTM/labeled_sampled_comments.csv
+LLMsTM/labeled_sampled_output.csv
 LLMsTM/labeled_sampled.csv
 
 #environment
@@ -28,3 +28,4 @@ LLMsTM/labeled_sampled.csv
 #models
 Llama-3.2-3B-Instruct/
 
+final sample output/
