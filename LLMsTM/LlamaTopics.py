@@ -26,7 +26,7 @@ df = pd.read_csv("/Users/hetavpatel/Desktop/Data Science/Grad DS Work/DSCI 601 A
 
 df["label"] = ""
 
-for i in range(150):    # set the loop for only first 500 comments.
+for i in range(len(df)):    # set the loop for only first 500 comments.
     text = df["textCleaned"][i]
     
     messages = [ 

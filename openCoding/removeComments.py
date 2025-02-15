@@ -33,3 +33,7 @@ print(df_main.info())
 
 #save the main csv file to a new csv file.
 df_main.to_csv("/Users/hetavpatel/Desktop/Data Science/Grad DS Work/DSCI 601 Applied Data Science/old_repos/NLPPunePorsche/openCoding/cleaned_youtube_comments_removed.csv", index=False)
+
+#transfer the pure english comments from the df_main to a new csv file.
+df_main = df_main[df_main["lang"] == "en"]
+df_main.to_csv("/Users/hetavpatel/Desktop/Data Science/Grad DS Work/DSCI 601 Applied Data Science/old_repos/NLPPunePorsche/openCoding/youtube_comments_unlabeled_english.csv", index=False)

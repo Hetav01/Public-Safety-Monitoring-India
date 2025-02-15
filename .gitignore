@@ -13,7 +13,7 @@ preprocessing/translated_comments.txt
 preprocessing/youtube_comments_english.csv
 preprocessing/cleaned_youtube_comments.csv
 
-openCoding/openCodingComments.csv
+openCoding/*.csv
 openCoding/openCodingComments.xlsx
 LLMsTM/AnishaopenCodingCommentsLabeled.xlsx
 LLMsTM/AnishaopenCodingCommentsLabeled.csv
@@ -21,6 +21,10 @@ openCoding/youtube_comments_unlabeled.csv
 LLMsTM/unlabeled_sampled.csv
 LLMsTM/labeled_sampled_output.csv
 LLMsTM/labeled_sampled.csv
+#all csv files in llmstm folder
+LLMsTM/*.csv
+LLMsTM/final_output/*
+LLMsTM/final_sample_output/*
 
 #environment
 .venv/
