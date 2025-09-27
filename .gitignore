@@ -27,6 +27,9 @@ LLMsTM/*.csv
 LLMsTM/final_output/*
 LLMsTM/final_sample_output/*
 
+LLMsTM/findErrors.ipynb
+LLMsTM/newTrial.py
+
 #environment
 .venv/
 
