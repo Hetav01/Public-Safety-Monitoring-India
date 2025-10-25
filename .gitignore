@@ -30,6 +30,10 @@ LLMsTM/final_sample_output/*
 LLMsTM/findErrors.ipynb
 LLMsTM/newTrial.py
 
+LLMsTM/DSCI602/2700_comments_anisha_labeled.csv
+LLMsTM/DSCI602/2700_comments_hetav_labeled_final.csv
+LLMsTM/DSCI602/*.csv
+
 #environment
 .venv/
 
