@@ -33,6 +33,9 @@ LLMsTM/newTrial.py
 LLMsTM/DSCI602/2700_comments_anisha_labeled.csv
 LLMsTM/DSCI602/2700_comments_hetav_labeled_final.csv
 LLMsTM/DSCI602/*.csv
+LLMsTM/DSCI602/old/*.csv
+LLMsTM/DSCI602/relabel/*.csv
+LLMsTM/DSCI602/relabel/*.xlsx
 
 #environment
 .venv/
